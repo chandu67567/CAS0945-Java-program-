@@ -1,0 +1,24 @@
+program:-
+import java.util.Scanner;
+public class SimpleInterestCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the principal amount: ");
+        double principal = scanner.nextDouble();
+        System.out.print("Enter the time period (in years): ");
+        double time = scanner.nextDouble();
+        System.out.print("Enter the age of the customer: ");
+        int age = scanner.nextInt();
+        double rateOfInterest = (age >= 60) ? 12 : 10;  
+        double simpleInterest = (principal * rateOfInterest * time) / 100;
+        System.out.println("The Simple Interest is: " + simpleInterest);
+        System.out.println("The rate of interest applied is: " + rateOfInterest + "%");
+        scanner.close();
+    }
+}
+output:-
+Enter the principal amount: 400000
+Enter the time period (in years): 2
+Enter the age of the customer: 40
+The Simple Interest is: 80000.0
+The rate of interest applied is: 10.0%
