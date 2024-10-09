@@ -1,0 +1,24 @@
+program:-
+import java.util.Scanner;
+public class EvenFibonacciSum {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the limit number n: ");
+        int n = scanner.nextInt();
+        int a = 0, b = 1;
+        int evenSum = 0;
+        while (b <= n) {
+             if (b % 2 == 0) {
+                evenSum += b;  
+            }
+            int temp = a;
+            a = b;
+            b = temp + b;
+        }
+        System.out.println("Sum of even Fibonacci numbers up to " + n + " is: " + evenSum);
+        scanner.close();
+    }
+}
+output:-
+Enter the limit number n: 6
+Sum of even Fibonacci numbers up to 6 is: 2
