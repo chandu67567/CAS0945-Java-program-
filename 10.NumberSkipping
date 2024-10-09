@@ -1,0 +1,22 @@
+program:-
+import java.util.Scanner;
+public class NumberSkipping {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the starting number m: ");
+        int m = scanner.nextInt();
+        System.out.print("Enter the ending number n: ");
+        int n = scanner.nextInt();
+        System.out.print("Enter how many numbers to skip (k): ");
+        int k = scanner.nextInt();
+        for (int i = m; i <= n; i += (k + 1)) {
+            System.out.print(i + " ");  
+        }
+        scanner.close();
+    }
+}
+output:-
+Enter the starting number m: 50
+Enter the ending number n: 100
+Enter how many numbers to skip (k): 7
+50 58 66 74 82 90 98 
