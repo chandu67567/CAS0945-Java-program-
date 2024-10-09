@@ -1,0 +1,21 @@
+program:-
+import java.util.Scanner;
+public class UsernameValidation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your username: ");
+        String username = scanner.nextLine();
+        System.out.print("Enter your password: ");
+        String password = scanner.nextLine();       
+        if (username.matches("[a-zA-Z0-9._]{5,15}")) {
+            System.out.println("Username is valid.");
+        } else {
+            System.out.println("Invalid username.");
+        }
+        scanner.close();
+    }
+}
+output:-
+Enter your username: chandana
+Enter your password: 123
+Username is valid.
