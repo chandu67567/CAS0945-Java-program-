@@ -1,0 +1,62 @@
+program:-
+import java.util.Scanner;
+import java.util.Arrays;
+public class SimpleStatistics {
+   public static double calculateMean(int[] numbers) {
+        int sum = 0;
+        for (int num : numbers) {
+            sum += num;
+        }
+        return (double) sum / numbers.length;
+    }
+    public static double calculateMedian(int[] numbers) {
+        Arrays.sort(numbers); 
+        int length = numbers.length;
+        if (length % 2 == 0) {
+            return (numbers[length / 2 - 1] + numbers[length / 2]) / 2.0;
+        } else {
+            return numbers[length / 2];
+        }
+    }
+    public static int calculateMode(int[] numbers) {
+        int maxCount = 0;
+        int mode = numbers[0];
+         for (int num : numbers) {
+            int count = 0;
+            for (int n : numbers) {
+                if (n == num) {
+                    count++;
+                }
+            }
+            if (count > maxCount) {
+                maxCount = count;
+                mode = num;
+            }
+        }
+         return mode;
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number of elements:");
+        int n = scanner.nextInt();
+         int[] numbers = new int[n];
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+        double mean = calculateMean(numbers);
+        System.out.println("Mean: " + mean);
+        double median = calculateMedian(numbers);
+        System.out.println("Median: " + median);
+        int mode = calculateMode(numbers);
+        System.out.println("Mode: " + mode);
+    }
+}
+output:-
+Enter the number of elements:
+7
+Enter the elements:
+12 13 45 47 36 36 57 
+Mean: 35.142857142857146
+Median: 36.0
+Mode: 36
