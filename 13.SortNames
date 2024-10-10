@@ -1,0 +1,52 @@
+program:-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+public class SortNames {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<String> names = new ArrayList<>();
+        System.out.println("Enter the number of names:");
+        int n = scanner.nextInt();
+        scanner.nextLine(); 
+        for (int i = 0; i < n; i++) {
+            System.out.println("Enter name " + (i + 1) + ":");
+            names.add(scanner.nextLine());
+        }
+        System.out.println("Choose sorting order: (1 for ascending, 2 for descending):");
+        int choice = scanner.nextInt();
+        if (choice == 1) {
+            Collections.sort(names);
+            System.out.println("Names in ascending alphabetical order:");
+        } 
+        else if (choice == 2) {
+            Collections.sort(names, Collections.reverseOrder());
+            System.out.println("Names in descending alphabetical order:");
+        } 
+        else {
+            System.out.println("Invalid choice.");
+            return;
+        }
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
+}
+output:-
+Enter the number of names:
+4
+Enter name 1:
+banana
+Enter name 2:
+apple
+Enter name 3:
+carrot
+Enter name 4:
+beetroot
+Choose sorting order: (1 for ascending, 2 for descending):
+1
+Names in ascending alphabetical order:
+apple
+banana
+beetroot
+carrot
