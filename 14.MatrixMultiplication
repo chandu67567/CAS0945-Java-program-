@@ -1,0 +1,66 @@
+pragram:-
+import java.util.Scanner;
+public class MatrixMultiplication {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number of rows for Matrix A:");
+        int rowsA = scanner.nextInt();
+        System.out.println("Enter the number of columns for Matrix A:");
+        int colsA = scanner.nextInt();
+        int[][] matrixA = new int[rowsA][colsA];
+        System.out.println("Enter elements for Matrix A:");
+        for (int i = 0; i < rowsA; i++) {
+            for (int j = 0; j < colsA; j++) {
+                matrixA[i][j] = scanner.nextInt();
+            }
+        }
+        System.out.println("Enter the number of rows for Matrix B:");
+        int rowsB = scanner.nextInt();
+        System.out.println("Enter the number of columns for Matrix B:");
+        int colsB = scanner.nextInt();
+        if (colsA != rowsB) {
+            System.out.println("Matrix multiplication not possible. The number of columns of Matrix A must be equal to the number of rows of Matrix B.");
+            return;
+        }
+        int[][] matrixB = new int[rowsB][colsB];
+        System.out.println("Enter elements for Matrix B:");
+        for (int i = 0; i < rowsB; i++) {
+            for (int j = 0; j < colsB; j++) {
+                matrixB[i][j] = scanner.nextInt();
+            }
+        }
+        int[][] resultMatrix = new int[rowsA][colsB];
+        for (int i = 0; i < rowsA; i++) {
+            for (int j = 0; j < colsB; j++) {
+                for (int k = 0; k < colsA; k++) {
+                    resultMatrix[i][j] += matrixA[i][k] * matrixB[k][j];
+                }
+            }
+        }
+        System.out.println("Resultant Matrix after multiplication:");
+        for (int i = 0; i < rowsA; i++) {
+            for (int j = 0; j < colsB; j++) {
+                System.out.print(resultMatrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+output:-
+Enter the number of rows for Matrix A:
+2
+Enter the number of columns for Matrix A:
+2
+Enter elements for Matrix A:
+1 2 
+2 3
+Enter the number of rows for Matrix B:
+2
+Enter the number of columns for Matrix B:
+2
+Enter elements for Matrix B:
+4 6
+ 5 75 7
+Resultant Matrix after multiplication:
+14 20 
+23 33 
